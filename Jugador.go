@@ -1,16 +1,3 @@
-/*
-Juego 1
-Juego termina cuando jugador tenga 21.
-Cada turno:
-- Jugador debe elegir un numero entre el 1 y el 10 x ronda.
-- Lider debe elegir al azar entre 6 y 10
-- Verificicar que jugadores eligieron el mismo nro que el lider.
-    - En ese caso mueren
-El juego no puede durar mas de 4 rondas
-Todos los jugadores que no logren llegar a 21 antes de las 4 rondas, seran eliminados.
-
-*/
-
 package main
 
 import (
@@ -126,24 +113,25 @@ func main() {
 		// Segundo juego, si es que sigue vivo
 		opcion = opc_pozo()
 
-		switch opcion {
-		case 1:
+		if opcion == 1 {
 			preguntar_pozo()
-		case 2:
 			resultado = juego2_jugador()
-			v_o_f(resultado)
+		} else {
+			resultado = juego2_jugador()
 		}
+		v_o_f(resultado)
+
 
 		// Tercer juego, si es que sigue vivo
 		opcion = opc_pozo()
 
-		switch opcion {
-		case 1:
+		if opcion == 1 {
 			preguntar_pozo()
-		case 2:
 			resultado = juego3_jugador()
-			v_o_f(resultado)
+		} else {
+			resultado = juego3_jugador()
 		}
+		v_o_f(resultado)
 
 	} else {
 		fmt.Println("No se pudo unir a un juego, te tendremos que matar.")
