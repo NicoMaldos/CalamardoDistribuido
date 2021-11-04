@@ -115,13 +115,13 @@ func main() {
 	// Enviar peticion para unirse al juego y recibir true o false
 	preguntar_juego()
 
-	var opcion int
+	var opcion, resultado int
 
 	// if preguntar juego
 	if true {
 		// Como voy a saber si es un jugador o un bot?
-		resultado1 := juego1_jugador(true, 0)
-		v_o_f(resultado1)
+		resultado = juego1_jugador(true, 0)
+		v_o_f(resultado)
 
 		// Segundo juego, si es que sigue vivo
 		opcion = opc_pozo()
@@ -130,8 +130,8 @@ func main() {
 		case 1:
 			preguntar_pozo()
 		case 2:
-			resultado2 := juego2_jugador()
-			v_o_f(resultado2)
+			resultado = juego2_jugador()
+			v_o_f(resultado)
 		}
 
 		// Tercer juego, si es que sigue vivo
@@ -141,8 +141,8 @@ func main() {
 		case 1:
 			preguntar_pozo()
 		case 2:
-			resultado3 := juego3_jugador()
-			v_o_f(resultado3)
+			resultado = juego3_jugador()
+			v_o_f(resultado)
 		}
 
 	} else {
